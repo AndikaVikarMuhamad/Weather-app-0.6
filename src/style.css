@@ -12,7 +12,7 @@ body {
 }
 .card {
   backdrop-filter: blur(10px);
-  background: #000d0;
+  background: ##222124d0;
   color: #ffffff;
   padding: 2em;
   border-radius: 30px;
