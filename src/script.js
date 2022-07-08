@@ -1,37 +1,24 @@
 let weather = {
   fetchWeather: function (kota) {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      "https://api.weatherapi.com/v1/current.json?key=a5a6bc21da734aa495f15121220207&q=" +
         kota +
-        "&units=metric&appid=81dc5ad28f653d202f13928ad50138fb&lang=id"
+        "&lang=id"
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
   },
   displayWeather: function (data) {
-    const { name } = data;
-    const { icon, description } = data.weather[0];
-    const { temp, humidity, feels_like } = data.main;
-    const { speed } = data.wind;
-    const { sunrise, sunset } = data.sys;
-    console.log(
-      name,
-      icon,
-      description,
-      temp,
-      humidity,
-      speed,
-      sunrise,
-      feels_like,
-      sunset
-    );
+    const { name } = data.location;
+    const { temp_c, wind_mph, humidity, feelslike_c } = data.current;
+    const { text, icon } = data.current.condition;
+    console.log(name, temp_c, wind_mph, text, icon, humidity, feelslike_c);
     document.querySelector(".kota").innerText = "Cuaca di " + name;
-    document.querySelector(".icon").src =
-      "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-    document.querySelector(".suhu").innerText = temp + "°C";
-    document.querySelector(".deskripsi").innerText = description;
+    document.querySelector(".icon").src = "https:" + icon + "";
+    document.querySelector(".suhu").innerText = temp_c + "°C";
+    document.querySelector(".deskripsi").innerText = text;
     document.querySelector(".angin").innerText =
-      "Kecepatan angin: " + speed + "km/h";
+      "Kecepatan angin: " + wind_mph + "m/s";
     document.querySelector(".kelembapan").innerText =
       "Kelembapan: " + humidity + "%";
     document.querySelector(".cuaca").classList.remove("hide");
