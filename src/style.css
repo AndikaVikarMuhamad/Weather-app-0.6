@@ -11,7 +11,7 @@ body {
   font-size: 120%;
 }
 .card {
-    
+  backdrop-filter: blur(10px);
   background: #432291d0;
   color: #ffffff;
   padding: 2em;
