@@ -1,4 +1,4 @@
-let weather = {
+const weather = {
   fetchWeather: function (kota) {
     fetch(
       "https://api.weatherapi.com/v1/current.json?key=a5a6bc21da734aa495f15121220207&q=" +
