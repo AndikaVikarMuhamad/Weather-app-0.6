@@ -21,10 +21,12 @@ const weather = {
       "Kecepatan angin: " + wind_mph + "m/s";
     document.querySelector(".kelembapan").innerText =
       "Kelembapan: " + humidity + "%";
+    document.querySelector(".card").classList.remove("dark");
     document.querySelector(".cuaca").classList.remove("hide");
-
-    document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + name + "')";
+    document.querySelector(".card").style.backgroundImage =
+      "url('../img/" + text + ".jpg')";
+    // document.body.style.backgroundImage =
+    //   "url('https://source.unsplash.com/1600x900/?" + name + "')";
     document.body.style.backgroundImage =
       "url('https://onlyforweb.andikavikar135.repl.co/image/" + name + "')";
   },

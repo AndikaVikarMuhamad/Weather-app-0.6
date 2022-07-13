@@ -10,9 +10,14 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 120%;
 }
+
 .card {
   backdrop-filter: blur(10px);
-  background: #000000d0;
+  background-size: cover;
+  background-position: bottom;
+  background-image: url("../img/Clear.jpg");
+  background-repeat: no-repeat;
+  /* background: #000000d0; */
   color: #ffffff;
   padding: 2em;
   border-radius: 30px;
@@ -75,4 +80,8 @@ input.search-bar {
 h1.suhu {
   margin: 0;
   margin-bottom: 00.4em;
+}
+
+.dark {
+  background: #000000d0;
 }
